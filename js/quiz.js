@@ -1,0 +1,56 @@
+// 厢间人 问卷数据库 — 中英双语
+// 用 quiz_export.py 导出 Excel 修改，改完用 quiz_export.py --import 导回
+// 权重格式: {技能索引: 分值}，索引 0=哲学思辨 1=逻辑推导 2=缪斯女神 3=灵魂叙事 4=技术专家 5=身强体壮
+window.QUIZ_ZH = [
+  { q: "手机掉进马桶的瞬间，你先想到什么？",
+    a: ["计算落水角度和抢救成功率", "这马桶是不是在嘲笑我", "用力一锤把马桶砸开"],
+    s: [{1:1,4:1}, {3:2}, {5:1,2:1}] },
+  { q: "深夜听到冰箱嗡嗡响，你觉得它在？",
+    a: ["密谋一场厨房政变", "制冷循环出了机械故障", "用低频噪音训练你的忍耐力"],
+    s: [{3:1,2:1}, {4:1,1:1}, {5:1,0:1}] },
+  { q: "看到一张椅子腿断了，你会？",
+    a: ["研究它折断的力学原因", "扛起椅子跑去撞墙发泄", "和它聊聊\"站不稳的人生\""],
+    s: [{1:1,4:1}, {5:1,3:1}, {3:1,0:1}] },
+  { q: "打游戏输了，你会？",
+    a: ["反复回放自己的操作帧数", "愤怒地把键盘捏变形", "怀疑是系统为了让你成长才安排失败"],
+    s: [{4:1,1:1}, {5:1,4:1}, {0:1,2:1}] },
+  { q: "路过一面白墙，你的本能是？",
+    a: ["在上面写一句诗", "用拳头在上面留个印", "盯着它思考\"空\"的意义"],
+    s: [{2:1,0:1}, {5:1,0:1}, {0:1,2:1}] },
+  { q: "你养的仙人掌死了，你会？",
+    a: ["解剖它找死因", "给它办葬礼并念悼词", "怪自己手劲太大捏碎了盆"],
+    s: [{1:1,4:1}, {3:1,2:1}, {5:2}] },
+  { q: "今天晚饭吃什么？",
+    a: ["蔬菜汁泡鹅腿", "米饭配米饭", "42号混凝土拌意大利面"],
+    s: [{5:1,2:1}, {0:2}, {5:1,4:1}] },
+  { q: "你可以与一颗星球通电话，你会选？",
+    a: ["询问地球今晚吃了吗", "和海王星聊一聊宇宙奥秘", "啊，赞美太阳！"],
+    s: [{3:2}, {1:2}, {2:1,5:1}] }
+];
+window.QUIZ_EN = [
+  { q: "Your phone falls into the toilet. Your first thought?",
+    a: ["Calculate the angle of impact and rescue success rate", "Is the toilet mocking me?", "Smash the toilet open with one punch"],
+    s: [{1:1,4:1}, {3:2}, {5:1,2:1}] },
+  { q: "You hear the fridge humming late at night. You think it's...",
+    a: ["Plotting a kitchen coup", "A mechanical fault in the cooling cycle", "Training your endurance with low-frequency noise"],
+    s: [{3:1,2:1}, {4:1,1:1}, {5:1,0:1}] },
+  { q: "You see a chair with a broken leg. You...",
+    a: ["Study the mechanical cause of the fracture", "Pick it up and run into a wall to vent", "Have a chat with it about \"the instability of life\""],
+    s: [{1:1,4:1}, {5:1,3:1}, {3:1,0:1}] },
+  { q: "You lose a video game. You...",
+    a: ["Replay your own frame data obsessively", "Crush the keyboard in rage", "Suspect the system arranged your failure so you could grow"],
+    s: [{4:1,1:1}, {5:1,4:1}, {0:1,2:1}] },
+  { q: "You pass a blank white wall. Your instinct is to...",
+    a: ["Write a line of poetry on it", "Leave a fist mark on it", "Stare at it and contemplate the meaning of emptiness"],
+    s: [{2:1,0:1}, {5:1,0:1}, {0:1,2:1}] },
+  { q: "Your cactus dies. You...",
+    a: ["Dissect it to find the cause of death", "Hold a funeral and read a eulogy", "Blame your own brute strength for crushing the pot"],
+    s: [{1:1,4:1}, {3:1,2:1}, {5:2}] },
+  { q: "What's for dinner tonight?",
+    a: ["Vegetable juice soaked goose leg", "Rice with a side of rice", "No. 42 concrete mixed with spaghetti"],
+    s: [{5:1,2:1}, {0:2}, {5:1,4:1}] },
+  { q: "You can phone a planet. Which one?",
+    a: ["Ask Earth if it's had dinner yet", "Discuss cosmic mysteries with Neptune", "Ah, praise the sun!"],
+    s: [{3:2}, {1:2}, {2:1,5:1}] }
+];
+function QUIZ() { return STATE.lang === "zh" ? window.QUIZ_ZH : window.QUIZ_EN; }
