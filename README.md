@@ -1,6 +1,6 @@
 # 厢间人 — The Man in Between
 
-> 仿《极乐迪斯科》(Disco Elysium) 的后末日火车文字冒险 Web 游戏 · 本地化课程项目
+> 仿《极乐迪斯科》(Disco Elysium) 的后末日火车文字冒险 Web 游戏 · 本地化课程Vibe Coding项目，仅包含游戏背景世界观设计，大纲设计与游戏框架搭建
 
 [English](#english)
 
