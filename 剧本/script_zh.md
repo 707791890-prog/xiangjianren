@@ -15,6 +15,7 @@ consume: true
 @enditem
 
 # 开场
+@bg: assets/bg_意识的诞生.png
 @music: assets/灰雾_no-watermark.mp3
 
 ## wake_up
@@ -93,7 +94,7 @@ consume: true
 @end
 
 ---
-@bg: assets/bg_开场.png
+@bg: assets/bg_车厢.png
 @music: assets/轨道_no-watermark.mp3
 @volume: 0.2
 

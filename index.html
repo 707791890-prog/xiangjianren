@@ -2058,14 +2058,22 @@ function rebuildInventory() {
 function replayAllDialogue() {
   var log = STATE.dialogueLog || [];
   if (log.length === 0) return;
+  // 去重：相邻相同类型的 node 条目合并
+  var deduped = [];
+  for (var h = 0; h < log.length; h++) {
+    var prev = deduped[deduped.length - 1];
+    var cur = log[h];
+    if (prev && prev.type === "node" && cur.type === "node" && prev.id === cur.id) continue;
+    deduped.push(cur);
+  }
   var savedBg = STATE._effectiveBg;
   var savedMusic = STATE._effectiveMusic;
   STATE._currentBg = null; STATE._currentMusic = null;
   STATE._effectiveBg = null; STATE._effectiveMusic = null;
   clearDialogue();
   var container = document.getElementById("dialogue-content");
-  for (var h = 0; h < log.length; h++) {
-    var entry = log[h];
+  for (var h = 0; h < deduped.length; h++) {
+    var entry = deduped[h];
     var spk, txt, cls;
     if (entry.type === "node") {
       var node = findNode(entry.id);
@@ -2104,6 +2112,7 @@ function replayAllDialogue() {
     textEl.textContent = txt;
     container.appendChild(textEl);
   }
+  STATE.dialogueLog = deduped;
   container.scrollTop = container.scrollHeight;
   var lastNodeId = STATE.currentNodeId;
   if (lastNodeId) {
